@@ -53,14 +53,14 @@ section > div {
   content: '김병철';
   overflow: hidden;
   border-right: 1px solid black;
-  animation: typing 2s;
+  animation: typing 1s;
 }
 
 @keyframes typing{
   0% {
     content: '김';
   }
-  50% {
+  80% {
     content: '김병'
   }
   100% {

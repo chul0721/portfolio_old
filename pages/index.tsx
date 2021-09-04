@@ -5,11 +5,11 @@ import BrowserSupport from '../components/browserSupport'
 
 class Home extends React.Component<UserAgentProps> {
   render() {
-    const ua = this.props
+    const { ua }: UserAgentProps = this.props
 
     return (
       <>
-        {ua.isMobile ? <BrowserSupport /> : <></>}
+        {(ua?.isIE || ua?.isSafari) ? <BrowserSupport /> : <></>}
 
         <section className="w-screen h-screen">
           <div className="test flex justify-center text-6xl font-bold pt-56" data-aos="fade-down">
