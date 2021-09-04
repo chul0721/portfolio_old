@@ -25,7 +25,9 @@ class Home extends React.Component<UserAgentProps> {
         </section>
 
         <section className="w-screen h-screen">
-          <div className=""></div>
+          <div className="font-bold text-4xl p-64">
+            Skills
+          </div>
         </section>
       </>
     )
