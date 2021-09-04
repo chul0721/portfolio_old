@@ -56,12 +56,12 @@ section > div {
   animation: typing 1s;
 }
 
-@keyframes typing{
+@keyframes typing {
   0% {
     content: '김';
   }
   80% {
-    content: '김병'
+    content: '김병';
   }
   100% {
     content: '김병철';
