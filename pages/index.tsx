@@ -1,20 +1,33 @@
 import React from 'react'
+import { withUserAgent } from 'next-useragent'
+import UserAgentProps from '../typings/UserAgentProps'
+import BrowserSupport from '../components/browserSupport'
 
-class Home extends React.Component {
+class Home extends React.Component<UserAgentProps> {
   render() {
+    const ua = this.props
+
     return (
       <>
-        <div className="w-screen h-screen">
-          <div className="flex justify-center text-6xl font-bold pt-56" data-aos="fade-down">
-            김병철
+        {ua.isMobile ? <BrowserSupport /> : <></>}
+
+        <section className="w-screen h-screen">
+          <div className="test flex justify-center text-6xl font-bold pt-56" data-aos="fade-down">
           </div>
-          <div className="flex justify-center text-2xl font-semibold" data-aos="fade-right">
+          <span className="flex justify-center text-2xl font-semibold" data-aos="fade-right">
             Byung Chul Kim
-          </div>
-        </div>
+          </span>
+          <span className="scrolldown">
+            <span></span>
+          </span>
+        </section>
+
+        <section className="w-screen h-screen">
+          <div className=""></div>
+        </section>
       </>
     )
   }
 }
 
-export default Home
+export default withUserAgent(Home)
