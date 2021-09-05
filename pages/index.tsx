@@ -13,7 +13,7 @@ class Home extends React.Component<UserAgentProps> {
 
         <section className="w-screen h-screen">
           <div
-            className="test flex justify-center text-6xl font-bold pt-56"
+            className="typing flex justify-center text-6xl font-bold pt-56"
             data-aos="fade-down"
           ></div>
           <span className="flex justify-center text-2xl font-semibold" data-aos="fade-right">
@@ -25,7 +25,7 @@ class Home extends React.Component<UserAgentProps> {
         </section>
 
         <section className="w-screen h-screen">
-          <div className="font-bold text-4xl p-64">
+          <div className="font-bold text-4xl p-64 pl-96">
             Skills
           </div>
         </section>
