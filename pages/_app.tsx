@@ -4,6 +4,7 @@ import { useEffect } from 'react'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import '../public/global.css'
+import Head from 'next/head'
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
@@ -14,6 +15,13 @@ function MyApp({ Component, pageProps }: AppProps) {
     })
   }, [])
 
-  return <Component {...pageProps} />
+  return (
+    <>
+      <Head>
+        <title>김병철의 포트폴리오</title>
+      </Head>
+      <Component {...pageProps} />
+    </>
+  )
 }
 export default MyApp
