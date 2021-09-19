@@ -48,34 +48,42 @@ section > div {
 .typing::before {
   content: '김병철';
   overflow: hidden;
-  border-right: 1px solid black;
+  border-right: none;
   animation: typing 1.8s;
 }
 
 @keyframes typing {
   0% {
     content: 'ㄱ';
+    border-right: 1px solid black;
   }
   10% {
     content: '기';
+    border-right: 1px solid black;
   }
   20% {
     content: '김';
+    border-right: 1px solid black;
   }
   30% {
     content: '김ㅂ';
+    border-right: 1px solid black;
   }
   40% {
     content: '김벼';
+    border-right: 1px solid black;
   }
   50% {
     content: '김병';
+    border-right: 1px solid black;
   }
   60% {
     content: '김병ㅊ';
+    border-right: 1px solid black;
   }
   70% {
     content: '김병처';
+    border-right: 1px solid black;
   }
   80% {
     content: '김병철';
