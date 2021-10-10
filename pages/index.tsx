@@ -2,7 +2,7 @@ import React from 'react'
 import { withUserAgent } from 'next-useragent'
 import UserAgentProps from '../typings/UserAgentProps'
 import BrowserSupport from '../components/browserSupport'
-import { SkillCard, skills } from '../components/skillCard'
+import { SkillCard, langs, frameworks, db, others } from '../components/skillCard'
 
 class Home extends React.Component<UserAgentProps> {
   render() {
@@ -27,18 +27,47 @@ class Home extends React.Component<UserAgentProps> {
 
         <section className="w-screen h-screen">
           <div className="font-bold text-4xl">Skills</div>
-          <div className="flex">
-            {Object.keys(skills).map((skillkey) => {
-              const skill = skills[skillkey]
-              return (
-                <div key={skill.name} className="p-10">
-                  <SkillCard
-                    name={skill.name}
-                    src={skill.src}
-                  />
-                </div>
-              )
-            })}
+          <div className="grid">
+            <div className="grid grid-flow-col auto-cols-max">
+              {Object.keys(langs).map((langkey) => {
+                const lang = langs[langkey]
+                return (
+                  <div key={lang.name} className="">
+                    <SkillCard name={lang.name} src={lang.src} />
+                  </div>
+                )
+              })}
+            </div>
+            <div className="grid grid-flow-col auto-cols-max">
+              {Object.keys(frameworks).map((frameworkkey) => {
+                const framework = frameworks[frameworkkey]
+                return (
+                  <div key={framework.name} className="">
+                    <SkillCard name={framework.name} src={framework.src} />
+                  </div>
+                )
+              })}
+            </div>
+            <div className="grid grid-flow-col auto-cols-max">
+              {Object.keys(db).map((dbkey) => {
+                const database = db[dbkey]
+                return (
+                  <div key={database.name} className="">
+                    <SkillCard name={database.name} src={database.src} />
+                  </div>
+                )
+              })}
+            </div>
+            <div className="grid grid-flow-col auto-cols-max">
+              {Object.keys(others).map((otherkey) => {
+                const other = others[otherkey]
+                return (
+                  <div key={other.name} className="">
+                    <SkillCard name={other.name} src={other.src} />
+                  </div>
+                )
+              })}
+            </div>
           </div>
         </section>
       </>
