@@ -31,7 +31,7 @@ class Home extends React.Component<UserAgentProps> {
             {Object.keys(skills).map((skillkey) => {
               const skill = skills[skillkey]
               return (
-                <div key={skill.name}>
+                <div key={skill.name} className="p-10">
                   <SkillCard
                     name={skill.name}
                     src={skill.src}
