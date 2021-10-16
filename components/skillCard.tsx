@@ -5,8 +5,7 @@ const SkillCard = ({ name, src }: SkillCardProps): JSX.Element => {
   return (
     <>
       <div className="grid">
-        {name}
-        <Image src={src} width="150" height="150" />
+        <Image src={src} width="100%" height="100%" />
       </div>
     </>
   )
@@ -46,26 +45,4 @@ const frameworks: Record<string, SkillCardProps> = {
   }
 }
 
-const db: Record<string, SkillCardProps> = {
-  postgresql: {
-    name: 'Postgresql',
-    src: '/img/postgresql.png'
-  },
-  mysql: {
-    name: 'Mysql',
-    src: '/img/mysql.png'
-  },
-  mongodb: {
-    name: 'MongoDB',
-    src: '/img/MongoDB.png'
-  }
-}
-
-const others: Record<string, SkillCardProps> = {
-  docker: {
-    name: 'Docker',
-    src: '/img/Docker.png'
-  }
-}
-
-export { SkillCard, langs, frameworks, db, others }
+export { SkillCard, langs, frameworks }

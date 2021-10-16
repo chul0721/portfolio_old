@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>김병철의 포트폴리오</title>
+        <title>ByungChul Kim</title>
       </Head>
       <Component {...pageProps} />
     </>
