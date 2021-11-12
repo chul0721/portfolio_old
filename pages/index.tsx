@@ -2,7 +2,8 @@ import React from 'react'
 import { withUserAgent } from 'next-useragent'
 import UserAgentProps from '../typings/UserAgentProps'
 import BrowserSupport from '../components/browserSupport'
-import { SkillCard, langs, frameworks } from '../components/skillCard'
+import Header from '../components/Header'
+import Clock from '../components/Clock'
 
 class Home extends React.Component<UserAgentProps> {
   render() {
@@ -13,16 +14,10 @@ class Home extends React.Component<UserAgentProps> {
         {ua?.isIE || ua?.isMobile ? <BrowserSupport /> : <></>}
 
         <section className="w-screen h-screen">
-          <div
-            className="typing flex justify-center text-6xl font-bold pt-56"
-            data-aos="fade-down"
-          ></div>
-          <span className="flex justify-center text-2xl font-semibold pl-1" data-aos="fade-right">
-            Byung Chul Kim
-          </span>
-          <span className="scrolldown">
-            <span></span>
-          </span>
+          <Header />
+          <div className="grid justify-center mt-20">
+            <Clock />
+          </div>
         </section>
       </>
     )
@@ -31,8 +26,9 @@ class Home extends React.Component<UserAgentProps> {
 
 export default withUserAgent(Home)
 
-
 /*
+import { SkillCard, langs, frameworks } from '../components/skillCard'
+
               {Object.keys(frameworks).map((frameworkkey) => {
                 const framework = frameworks[frameworkkey]
                 return (

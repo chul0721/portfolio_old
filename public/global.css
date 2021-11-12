@@ -3,6 +3,8 @@ body {
   width: 100%;
   height: 100%;
   scroll-snap-type: y mandatory;
+  background-color: black;
+  color: white;
 }
 
 section > div {
@@ -22,8 +24,8 @@ section > div {
   height: 20px;
   transform: rotate(45deg);
   margin: -10px;
-  border-bottom: 2px solid black;
-  border-right: 2px solid black;
+  border-bottom: 2px solid white;
+  border-right: 2px solid white;
   animation: animate 2s infinite;
 }
 
@@ -43,6 +45,22 @@ section > div {
   100% {
     opacity: 0;
   }
+}
+
+.gradient {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  color: transparent;
+  background-clip: text;
+  animation: gradient 15s ease infinite;
+  background-size: 400% 400%;
+}
+
+.gradient2 {
+  background: linear-gradient(-45deg, #f46b45, #eea849, #00c9ff, #92fe9d);
+  color: transparent;
+  background-clip: text;
+  animation: gradient 15s ease infinite;
+  background-size: 400% 400%;
 }
 
 .typing::before {
@@ -90,5 +108,17 @@ section > div {
   }
   100% {
     content: '김병철';
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
