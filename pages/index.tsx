@@ -24,22 +24,15 @@ class Home extends React.Component<UserAgentProps> {
             <span></span>
           </span>
         </section>
+      </>
+    )
+  }
+}
 
-        <section className="w-screen h-screen">
-          <div className="font-bold text-4xl p-28">Skills</div>
-          <div className="font-semibold text-2xl flex justify-center mb-20">Click on the icons to find out more information.</div>
-          <div className="grid">
-            <div className="grid grid-flow-col auto-cols-max justify-center p-2">
-              {Object.keys(langs).map((langkey) => {
-                const lang = langs[langkey]
-                return (
-                  <div key={lang.name} className="px-8">
-                    <SkillCard name={lang.name} src={lang.src} />
-                  </div>
-                )
-              })}
-            </div>
-            <div className="grid grid-flow-col auto-cols-max justify-center p-2">
+export default withUserAgent(Home)
+
+
+/*
               {Object.keys(frameworks).map((frameworkkey) => {
                 const framework = frameworks[frameworkkey]
                 return (
@@ -48,12 +41,12 @@ class Home extends React.Component<UserAgentProps> {
                   </div>
                 )
               })}
-            </div>
-          </div>
-        </section>
-      </>
-    )
-  }
-}
-
-export default withUserAgent(Home)
+              {Object.keys(langs).map((langkey) => {
+                const lang = langs[langkey]
+                return (
+                  <div key={lang.name} className="px-8">
+                    <SkillCard name={lang.name} src={lang.src} />
+                  </div>
+                )
+              })}
+*/
