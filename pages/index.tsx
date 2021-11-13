@@ -15,9 +15,8 @@ class Home extends React.Component<UserAgentProps> {
 
     return (
       <>
-        {ua?.isIE || ua?.isMobile ? <BrowserSupport /> : <></>}
-
         <section className="w-full h-screen">
+          {ua?.isIE || ua?.isMobile ? <BrowserSupport /> : <></>}
           <div>
             <Header />
             <div className="grid justify-center mt-20" data-aos="fade-down">

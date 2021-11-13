@@ -2,10 +2,7 @@ const BrowserSupport = () => {
   return (
     <>
       <div className="text-lg font-semibold bg-yellow-200 px-4 py-2">
-        IE와 일부 모바일 브라우저의 경우 스크롤 인터랙션이 제대로 작동하지 않을 수 있습니다.
-        <a className="pl-2 font-bold underline" href="https://caniuse.com/?search=scroll-snap">
-          자세히 알아보기
-        </a>
+        해당 웹사이트는 모바일 및 Internet Explorer을 지원하지 않습니다.
       </div>
     </>
   )
