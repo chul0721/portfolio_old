@@ -30,8 +30,24 @@ class Clock extends React.Component<{}, Props> {
 
     return (
       <>
-        <div className="gradient2 flex justify-center text-6xl p-5">
-          {h < 5 ? 'Good Evening 🌙' : h < 12 ? 'Good Morning 🌤' : h < 18 ? 'Good Afternoon 🌥' : 'Good Evening 🌙'}
+        <div className="flex justify-center text-6xl p-5">
+          {h < 5 ? (
+            <span>
+              <span className="gradient2">Good Evening</span>🌙
+            </span>
+          ) : h < 12 ? (
+            <span>
+              <span className="gradient2">Good Morning</span>🌤
+            </span>
+          ) : h < 18 ? (
+            <span>
+              <span className="gradient2">Good Afternoon</span>🌥
+            </span>
+          ) : (
+            <span>
+              <span className="gradient2">Good Evening</span>🌙
+            </span>
+          )}
         </div>
         <div className="flex justify-center text-6xl p-2">
           <div className="text-4xl font-mono">
