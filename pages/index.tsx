@@ -27,10 +27,10 @@ class Home extends React.Component<UserAgentProps> {
               {Object.keys(icons).map((iconkey) => {
                 const icon = icons[iconkey]
                 return (
-                  <span className="cursor-pointer px-2" data-aos="fade-up">
+                  <span key={icon.src} className="cursor-pointer px-2" data-aos="fade-up">
                     <Link href={icon.href} passHref>
                       <a target="_blank" rel="noreferrer">
-                        <Image src={icon.src} width={icon.width} height={icon.height} />
+                        <Image src={icon.src} width={icon.width} height={icon.height} alt="icons" />
                       </a>
                     </Link>
                   </span>

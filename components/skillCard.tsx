@@ -5,7 +5,7 @@ const SkillCard = ({ name, src }: SkillCardProps): JSX.Element => {
   return (
     <>
       <div className="grid">
-        <Image src={src} width="100%" height="100%" />
+        <Image src={src} width="100%" height="100%" alt="skills" />
       </div>
     </>
   )
