@@ -8,7 +8,7 @@ const icons: Record<string, IconProps> = {
     height: '30'
   },
   instagram: {
-    href: 'https://instagram.com/chul_0721',
+    href: 'https://instagram.com/chul_0721/',
     src: '/img/instagram.png',
     width: '28',
     height: '28'
