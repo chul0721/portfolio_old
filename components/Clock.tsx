@@ -40,7 +40,7 @@ const Clock = () => {
       </div>
       <div className="flex justify-center text-6xl p-2">
         <div className="text-4xl font-mono">
-          {(h < 10) || (h > 12 && h < 22) ? '0' + (h % 12) : h % 12}:{m < 10 ? '0' + m : m}:{s < 10 ? '0' + s : s}{' '}
+          {(h % 12 < 10) ? '0' + (h % 12) : h % 12}:{m < 10 ? '0' + m : m}:{s < 10 ? '0' + s : s}{' '}
           {h < 12 ? 'AM' : 'PM'}
         </div>
       </div>
