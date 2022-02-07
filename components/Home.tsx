@@ -1,5 +1,4 @@
 import React from 'react'
-import Header from './Header'
 import Clock from './Clock'
 import { SkillCard, langs, frameworks } from './skillCard'
 import { icons } from './icons'
@@ -7,11 +6,47 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 const Home = () => {
+  const [theme, setTheme] = React.useState('dark')
+  const [image, setImage] = React.useState(true)
+
+  function changeTheme() {
+    if (theme === 'dark') {
+      setTheme('light')
+      setImage(false)
+      document.getElementsByClassName('themeButton')[0].innerHTML = '🌙'
+      document.getElementsByTagName('body')[0].classList.remove('darkTheme')
+      document.getElementsByTagName('body')[0].classList.add('lightTheme')
+    } else if (theme === 'light') {
+      setTheme('dark')
+      setImage(true)
+      document.getElementsByClassName('themeButton')[0].innerHTML = '☀️'
+      document.getElementsByTagName('body')[0].classList.remove('lightTheme')
+      document.getElementsByTagName('body')[0].classList.add('darkTheme')
+    } else {
+      setTheme('dark')
+      setImage(true)
+      document.getElementsByClassName('themeButton')[0].innerHTML = '☀️'
+      document.getElementsByTagName('body')[0].classList.remove('lightTheme')
+      document.getElementsByTagName('body')[0].classList.add('darkTheme')
+    }
+  }
+
   return (
     <>
       <section className="w-full h-screen">
         <div>
-          <Header />
+          <div className="p-12">
+            <span
+              className="gradient typing p-8 font-semibold text-4xl"
+              data-aos="fade-down"
+            ></span>
+            <span className="scrolldown">
+              <span></span>
+            </span>
+            <button className="themeButton" onClick={changeTheme}>
+              ☀️
+            </button>
+          </div>
           <div className="grid justify-center mt-20" data-aos="fade-down">
             <Clock />
           </div>
@@ -22,7 +57,16 @@ const Home = () => {
                 <span key={icon.src} className="cursor-pointer px-2" data-aos="fade-up">
                   <Link href={icon.href} passHref>
                     <a target="_blank" rel="noreferrer">
-                      <Image src={icon.src} width={icon.width} height={icon.height} alt="icons" />
+                      {image ? (
+                        <Image src={icon.src} width={icon.width} height={icon.height} alt="icons" />
+                      ) : (
+                        <Image
+                          src={icon.src2}
+                          width={icon.width}
+                          height={icon.height}
+                          alt="icons"
+                        />
+                      )}
                     </a>
                   </Link>
                 </span>
@@ -33,7 +77,7 @@ const Home = () => {
       </section>
 
       <div className="h-40 overflow-hidden">
-        <svg viewBox="0 0 500 150" preserveAspectRatio="none" className="h-full w-full">
+        <svg viewBox="0 0 500 150" preserveAspectRatio="none" className="h-full w-full text-white">
           <path
             d="M-0.27,6.42 C153.78,224.50 349.20,-49.98 502.54,22.20 L500.00,150.00 L0.00,150.00 Z"
             className="stroke-0 fill-current"

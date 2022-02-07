@@ -5,8 +5,16 @@ body {
   margin: 0;
   padding: 0;
   scroll-snap-type: y mandatory;
+}
+
+.darkTheme {
   background-color: black;
   color: white;
+}
+
+.lightTheme {
+  background-color: white;
+  color: dark;
 }
 
 section > div {
