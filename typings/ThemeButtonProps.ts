@@ -1,5 +1,6 @@
 type buttonProps = {
-  name: string
+  currentTheme: string
+  onClick: () => void
 }
 
 export default buttonProps
