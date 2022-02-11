@@ -1,4 +1,4 @@
-const BrowserSupport = () => {
+const BrowserSupport: React.FC = () => {
   return (
     <>
       <div className="text-lg font-semibold bg-yellow-200 px-4 py-2">

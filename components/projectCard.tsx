@@ -1,7 +1,7 @@
 import React from 'react'
 import ProjectCardProps from '../typings/ProjectCardProps'
 
-const ProjectCard = (props: ProjectCardProps) => {
+const ProjectCard: React.FC<ProjectCardProps> = (props) => {
   return (
     <>
       <span className="tape bg-white h-12 w-36 absolute opacity-60 mt-0 -ml-12 border-gray border-2"></span>

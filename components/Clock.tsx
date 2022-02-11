@@ -4,7 +4,7 @@ type Props = {
   time: Date
 }
 
-const Clock = () => {
+const Clock: React.FC = () => {
   const [time, setTime] = React.useState(new Date())
 
   React.useEffect(() => {

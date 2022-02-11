@@ -1,7 +1,7 @@
 import React from 'react'
 import buttonProps from '../typings/ThemeButtonProps'
 
-const ThemeButton = (props: buttonProps) => {
+const ThemeButton: React.FC<buttonProps> = (props) => {
   return (
     <>
       {props.currentTheme == 'dark' ? (

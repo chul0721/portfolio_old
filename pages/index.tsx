@@ -10,7 +10,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import ThemeButton from '../components/themeButton'
 
-const Main = (UserAgentProps: UserAgentProps) => {
+const Main: React.FC<UserAgentProps> = (UserAgentProps) => {
   const { ua }: UserAgentProps = UserAgentProps
 
   const [page, setPage] = React.useState(1)

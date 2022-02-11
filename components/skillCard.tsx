@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import SkillCardProps from '../typings/SkillCardProps'
 
-const SkillCard = ({ name, src }: SkillCardProps): JSX.Element => {
+const SkillCard: React.FC<SkillCardProps> = ({ name, src }): JSX.Element => {
   return (
     <>
       <div className="grid">
