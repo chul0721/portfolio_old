@@ -18,7 +18,7 @@ class MyDocument extends Document {
             referrerPolicy="no-referrer"
           ></Script>
         </Head>
-        <body className="darkTheme">
+        <body className="dark dark:bg-black dark:text-white bg-white text-black">
           <Main />
           <NextScript />
           <div id="modal-root"></div>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { withUserAgent } from 'next-useragent'
 import UserAgentProps from '../typings/UserAgentProps'
 import BrowserSupport from '../components/browserSupport'
@@ -17,6 +17,10 @@ const Main: React.FC<UserAgentProps> = (UserAgentProps) => {
   const [theme, setTheme] = React.useState('dark')
   const [image, setImage] = React.useState(true)
 
+  useEffect(() => {
+    document.documentElement.classList.add('dark')
+  }, [])
+
   function changePage() {
     if (page == 1) {
       setPage(2)
@@ -29,18 +33,15 @@ const Main: React.FC<UserAgentProps> = (UserAgentProps) => {
     if (theme === 'dark') {
       setTheme('light')
       setImage(false)
-      document.getElementsByTagName('body')[0].classList.remove('darkTheme')
-      document.getElementsByTagName('body')[0].classList.add('lightTheme')
+      document.documentElement.classList.remove('dark')
     } else if (theme === 'light') {
       setTheme('dark')
       setImage(true)
-      document.getElementsByTagName('body')[0].classList.remove('lightTheme')
-      document.getElementsByTagName('body')[0].classList.add('darkTheme')
+      document.documentElement.classList.add('dark')
     } else {
       setTheme('dark')
       setImage(true)
-      document.getElementsByTagName('body')[0].classList.remove('lightTheme')
-      document.getElementsByTagName('body')[0].classList.add('darkTheme')
+      document.documentElement.classList.add('dark')
     }
   }
 

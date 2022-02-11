@@ -7,16 +7,6 @@ body {
   scroll-snap-type: y mandatory;
 }
 
-.darkTheme {
-  background-color: black;
-  color: white;
-}
-
-.lightTheme {
-  background-color: white;
-  color: dark;
-}
-
 section > div {
   scroll-snap-align: start;
 }
