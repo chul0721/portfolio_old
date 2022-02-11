@@ -4,6 +4,7 @@ import UserAgentProps from '../typings/UserAgentProps'
 import BrowserSupport from '../components/browserSupport'
 import Clock from '../components/Clock'
 import { SkillCard, langs, frameworks } from '../components/skillCard'
+import { ProjectCard, projects } from '../components/projectCard'
 import { icons } from '../components/icons'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -56,10 +57,7 @@ const Main = (UserAgentProps: UserAgentProps) => {
             <div className="scrolldown">
               <span></span>
             </div>
-            <div
-              className="justify-end"
-              data-aos="fade-down"
-            >
+            <div className="justify-end" data-aos="fade-down">
               <ThemeButton currentTheme={theme} onClick={changeTheme} />
             </div>
           </div>
@@ -74,13 +72,20 @@ const Main = (UserAgentProps: UserAgentProps) => {
                   <Link href={icon.href} passHref>
                     <a target="_blank" rel="noreferrer">
                       {image ? (
-                        <Image src={icon.src} width={icon.width} height={icon.height} alt="icons" />
+                        <Image
+                          src={icon.src}
+                          width={icon.width}
+                          height={icon.height}
+                          alt="icons"
+                          className="opacity-100 hover:opacity-50"
+                        />
                       ) : (
                         <Image
                           src={icon.src2}
                           width={icon.width}
                           height={icon.height}
                           alt="icons"
+                          className="opacity-100 hover:opacity-50"
                         />
                       )}
                     </a>
@@ -101,9 +106,10 @@ const Main = (UserAgentProps: UserAgentProps) => {
         </svg>
       </div>
 
-      <section className="w-full h-screen bg-white">
+      <section className="w-full h-screen bg-white text-black">
         <div className="grid p-52">
-          <div className="font-bold text-4xl text-black px-28 pb-20">Skills</div>
+          <div className="font-bold text-4xl px-28">Skills</div>
+          <div className="font-mono text-xl px-28 pt-2">Tech Stack</div>
           <div className="grid grid-flow-col auto-cols-max justify-center p-2">
             {Object.keys(frameworks).map((frameworkkey) => {
               const framework = frameworks[frameworkkey]
@@ -120,6 +126,27 @@ const Main = (UserAgentProps: UserAgentProps) => {
               return (
                 <div key={lang.name} className="px-8">
                   <SkillCard name={lang.name} src={lang.src} />
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="w-full h-screen bg-white text-black">
+        <div className="grid p-52">
+          <div className="font-bold text-4xl px-28">Projects</div>
+          <div className="font-mono text-xl px-28 pt-2">Toy Projects & Team Projects</div>
+          <div className="grid grid-cols-3">
+            {Object.keys(projects).map((projectkey) => {
+              const project = projects[projectkey]
+              return (
+                <div key={project.name} className="px-4 pt-12">
+                  <ProjectCard
+                    name={project.name}
+                    src={project.src}
+                    description={project.description}
+                  />
                 </div>
               )
             })}

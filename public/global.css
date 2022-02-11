@@ -132,3 +132,7 @@ section > div {
     background-position: 0% 50%;
   }
 }
+
+.tape {
+  transform: rotate(-45deg);
+}

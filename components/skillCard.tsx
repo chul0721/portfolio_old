@@ -12,6 +12,10 @@ const SkillCard = ({ name, src }: SkillCardProps): JSX.Element => {
 }
 
 const langs: Record<string, SkillCardProps> = {
+  python: {
+    name: 'Python',
+    src: '/img/python.png'
+  },
   typescript: {
     name: 'TypeScript',
     src: '/img/typescript.png'
@@ -42,6 +46,10 @@ const frameworks: Record<string, SkillCardProps> = {
   graphql: {
     name: 'GraphQL',
     src: '/img/graphql.png'
+  },
+  expo: {
+    name: 'Expo',
+    src: '/img/expo.png'
   }
 }
 
